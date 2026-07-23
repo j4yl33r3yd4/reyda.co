@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reyda.co — Personal & Professional</title>
+  <meta name="description" content="A personal and professional website mockup for Reyda — combining identity, projects, work, and contact in one refined home on the web.">
+  <meta property="og:title" content="reyda.co — Personal & Professional">
+  <meta property="og:description" content="A clean personal-professional website concept for Reyda.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    /* Art direction: personal-professional signature site → calm, refined, confident.
+       Palette: neutral surfaces with deep teal accent for trust and clarity.
+       Typography: Instrument Serif + General Sans — elegant identity with readable body text.
+       Density: spacious, editorial, but practical. */
+
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-hero: clamp(3.2rem, 1rem + 6vw, 7rem);
+
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+
+      --color-bg: #f7f6f2;
+      --color-surface: #f9f8f5;
+      --color-surface-2: #fbfbf9;
+      --color-surface-offset: #f1eeea;
+      --color-surface-accent: color-mix(in oklch, var(--color-primary) 7%, var(--color-surface));
+      --color-divider: #dcd9d5;
+      --color-border: #d4d1ca;
+      --color-text: #28251d;
+      --color-text-muted: #67655f;
+      --color-text-faint: #9d9a95;
+      --color-text-inverse: #f9f8f4;
+      --color-primary: #0f6569;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #d4e1df;
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.875rem;
+      --radius-xl: 1.25rem;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
+      --shadow-md: 0 10px 30px oklch(0.2 0.01 80 / 0.08);
+      --shadow-lg: 0 20px 48px oklch(0.2 0.01 80 / 0.14);
+      --content-narrow: 640px;
+      --content-default: 1040px;
+      --content-wide: 1240px;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'General Sans', Inter, sans-serif;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #171614;
+      --color-surface: #1c1b19;
+      --color-surface-2: #201f1d;
+      --color-surface-offset: #252320;
+      --color-surface-accent: color-mix(in oklch, var(--color-primary) 10%, var(--color-surface));
+      --color-divider: #2a2926;
+      --color-border: #393836;
+      --color-text: #d3d1cd;
+      --color-text-muted: #a7a49e;
+      --color-text-faint: #77746f;
+      --color-text-inverse: #171614;
+      --color-primary: #62a4ac;
+      --color-primary-hover: #7ab7be;
+      --color-primary-highlight: #283537;
+      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+      --shadow-md: 0 10px 30px oklch(0 0 0 / 0.3);
+      --shadow-lg: 0 20px 48px oklch(0 0 0 / 0.4);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --color-bg: #171614;
+        --color-surface: #1c1b19;
+        --color-surface-2: #201f1d;
+        --color-surface-offset: #252320;
+        --color-surface-accent: color-mix(in oklch, var(--color-primary) 10%, var(--color-surface));
+        --color-divider: #2a2926;
+        --color-border: #393836;
+        --color-text: #d3d1cd;
+        --color-text-muted: #a7a49e;
+        --color-text-faint: #77746f;
+        --color-text-inverse: #171614;
+        --color-primary: #62a4ac;
+        --color-primary-hover: #7ab7be;
+        --color-primary-highlight: #283537;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      -moz-text-size-adjust: none;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--space-16);
+    }
+    body {
+      min-height: 100dvh;
+      line-height: 1.6;
+      font-family: var(--font-body, sans-serif);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background: var(--color-bg);
+      background-image:
+        radial-gradient(circle at top left, color-mix(in oklch, var(--color-primary) 9%, transparent), transparent 32%),
+        linear-gradient(180deg, color-mix(in oklch, var(--color-surface) 85%, transparent), transparent 40%);
+    }
+    img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+    input, button, textarea, select { font: inherit; color: inherit; }
+    h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.08; }
+    p, li { text-wrap: pretty; max-width: 72ch; }
+    a, button, input, textarea, select {
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), box-shadow var(--transition-interactive), transform var(--transition-interactive);
+    }
+    ::selection {
+      background: color-mix(in oklch, var(--color-primary) 22%, transparent);
+      color: var(--color-text);
+    }
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+    }
+    .container {
+      width: min(100% - 2rem, var(--content-wide));
+      margin-inline: auto;
+    }
+    .narrow { width: min(100% - 2rem, var(--content-default)); margin-inline: auto; }
+    .section { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-accent);
+      color: var(--color-primary);
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .muted { color: var(--color-text-muted); }
+    .faint { color: var(--color-text-faint); }
+
+    .skip-link {
+      position: absolute;
+      left: var(--space-4);
+      top: -3rem;
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      z-index: 100;
+    }
+    .skip-link:focus { top: var(--space-4); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: color-mix(in oklch, var(--color-bg) 82%, transparent);
+      border-bottom: 1px solid color-mix(in oklch, var(--color-text) 10%, transparent);
+    }
+    .site-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      min-height: 4.5rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .brand-mark {
+      width: 2rem;
+      height: 2rem;
+      color: var(--color-primary);
+    }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+    .site-nav a, .site-nav button {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      border: 1px solid transparent;
+      background: transparent;
+    }
+    .site-nav a:hover, .site-nav button:hover {
+      color: var(--color-text);
+      background: var(--color-surface);
+      border-color: color-mix(in oklch, var(--color-text) 10%, transparent);
+    }
+
+    .hero {
+      padding-top: clamp(var(--space-12), 10vw, var(--space-24));
+      padding-bottom: clamp(var(--space-10), 7vw, var(--space-20));
+    }
+    .hero-grid {
+      display: grid;
+      gap: var(--space-8);
+      align-items: end;
+    }
+    .hero-copy {
+      max-width: 48rem;
+      display: grid;
+      gap: var(--space-5);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      letter-spacing: -0.03em;
+      max-width: 11ch;
+    }
+    .hero p {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      max-width: 42ch;
+    }
+    .hero-actions {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-top: var(--space-2);
+    }
+    .btn {
+      min-height: 48px;
+      padding: 0.85rem 1.15rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      border: 1px solid color-mix(in oklch, var(--color-text) 12%, transparent);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+    .btn-primary {
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+    .btn-secondary {
+      background: var(--color-surface);
+      color: var(--color-text);
+    }
+    .btn-secondary:hover {
+      background: var(--color-surface-offset);
+      transform: translateY(-1px);
+    }
+
+    .hero-aside {
+      background: color-mix(in oklch, var(--color-surface) 86%, transparent);
+      border: 1px solid color-mix(in oklch, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-md);
+      display: grid;
+      gap: var(--space-5);
+    }
+    .hero-panel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .hero-panel-top h2 {
+      font-size: var(--text-lg);
+      font-weight: 600;
+    }
+    .mini-grid {
+      display: grid;
+      gap: var(--space-3);
+    }
+    .mini-card {
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-2);
+      border: 1px solid color-mix(in oklch, var(--color-text) 8%, transparent);
+      padding: var(--space-4);
+      display: grid;
+      gap: var(--space-2);
+    }
+    .mini-card strong {
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+    .mini-card span {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .section-heading {
+      display: grid;
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+      max-width: 44rem;
+    }
+    .section-heading h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      letter-spacing: -0.03em;
+    }
+    .section-heading p { color: var(--color-text-muted); }
+
+    .identity-layout,
+    .work-layout,
+    .contact-layout {
+      display: grid;
+      gap: var(--space-6);
+    }
+    .card {
+      background: color-mix(in oklch, var(--color-surface) 88%, transparent);
+      border: 1px solid color-mix(in oklch, var(--color-text) 9%, transparent);
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-5), 4vw, var(--space-8));
+      box-shadow: var(--shadow-sm);
+    }
+    .card h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-3);
+    }
+    .card p + p { margin-top: var(--space-3); }
+
+    .project-grid {
+      display: grid;
+      gap: var(--space-4);
+    }
+    .project {
+      background: var(--color-surface-2);
+      border: 1px solid color-mix(in oklch, var(--color-text) 9%, transparent);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      display: grid;
+      gap: var(--space-3);
+    }
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-accent);
+      color: var(--color-primary);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .list {
+      list-style: none;
+      display: grid;
+      gap: var(--space-3);
+    }
+    .list li {
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--color-divider);
+    }
+    .list li:first-child { border-top: 0; padding-top: 0; }
+
+    .timeline {
+      display: grid;
+      gap: var(--space-4);
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-3);
+      align-items: start;
+    }
+    .timeline-dot {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin-top: 0.45rem;
+      border-radius: var(--radius-full);
+      background: var(--color-primary);
+      box-shadow: 0 0 0 6px color-mix(in oklch, var(--color-primary) 14%, transparent);
+    }
+
+    .quote-block {
+      border-left: none;
+      background: var(--color-surface-offset);
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-6), 5vw, var(--space-10));
+      display: grid;
+      gap: var(--space-4);
+    }
+    .quote-block p {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      max-width: 22ch;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: var(--space-3);
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      text-decoration: none;
+      color: inherit;
+      padding: var(--space-4) var(--space-5);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-2);
+      border: 1px solid color-mix(in oklch, var(--color-text) 9%, transparent);
+      min-height: 56px;
+    }
+    .contact-link:hover {
+      background: var(--color-surface-accent);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      padding-block: var(--space-8) var(--space-12);
+      border-top: 1px solid var(--color-divider);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: 860px) {
+      .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr); }
+      .identity-layout { grid-template-columns: 1.1fr 0.9fr; align-items: start; }
+      .work-layout { grid-template-columns: 1fr 1fr; }
+      .contact-layout { grid-template-columns: 0.9fr 1.1fr; }
+      .project-grid { grid-template-columns: 1.05fr 0.95fr; }
+    }
+
+    @media (max-width: 759px) {
+      .site-header-inner { min-height: auto; padding-block: var(--space-3); align-items: start; flex-direction: column; }
+      .site-nav { width: 100%; }
+      .site-nav a, .site-nav button { flex: 1 1 auto; }
+      .hero h1 { max-width: 8ch; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="brand" href="#top" aria-label="Reyda home">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reyda logo">
+          <path d="M11 37V11h14.5c7.5 0 11.5 3.9 11.5 10 0 4.7-2.5 7.8-6.8 9L38 37h-7.9l-7-7.4H18V37H11Z" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 23h8.5c2.6 0 4.3-1.4 4.3-3.7 0-2.3-1.7-3.7-4.3-3.7H18V23Z" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>reyda.co</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button type="button" data-theme-toggle aria-label="Switch theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Personal & professional home</span>
+          <h1>Build a name people can remember.</h1>
+          <p>
+            Reyda can hold both sides of your life in one place: your identity, your work, your projects,
+            and the things you are steadily building over time.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start with contact</a>
+            <a class="btn btn-secondary" href="#projects">See the site structure</a>
+          </div>
+        </div>
+
+        <aside class="hero-aside" aria-label="Overview panel">
+          <div class="hero-panel-top">
+            <div>
+              <p class="faint">Suggested direction</p>
+              <h2>Signature site</h2>
+            </div>
+            <span class="tag">Mockup</span>
+          </div>
+          <div class="mini-grid">
+            <article class="mini-card">
+              <strong>Personal identity</strong>
+              <span>Your name, short bio, values, and a calm first impression.</span>
+            </article>
+            <article class="mini-card">
+              <strong>Professional work</strong>
+              <span>Skills, services, selected experience, and contact pathways.</span>
+            </article>
+            <article class="mini-card">
+              <strong>Projects & interests</strong>
+              <span>Featured builds, creative output, and evolving work in public.</span>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container identity-layout">
+        <div>
+          <div class="section-heading">
+            <span class="eyebrow">About</span>
+            <h2>A site that feels like a surname, not a template.</h2>
+            <p>
+              This concept treats Reyda as the main identity and gives you room to present yourself as a real person,
+              while still making space for serious work, evolving skills, and visible projects.
+            </p>
+          </div>
+          <div class="quote-block">
+            <p>Use the homepage to say who you are, what you are building, and why your work matters.</p>
+            <span class="muted">Clear, personal, and still professional.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Suggested intro block</h3>
+          <p>
+            Hi, I’m Jaylee Reyda. I’m building a life around practical skills, thoughtful work, and projects that connect identity with action.
+          </p>
+          <p class="muted">
+            This is where I keep my professional presence, selected work, and the things I’m learning in public.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Work</span>
+          <h2>Professional presence without losing personality.</h2>
+          <p>
+            Instead of separating “serious” and “personal” into different worlds, this layout gives each its own place and keeps the overall tone polished.
+          </p>
+        </div>
+
+        <div class="work-layout">
+          <article class="card">
+            <h3>What this section can show</h3>
+            <ul class="list" role="list">
+              <li>Skills, services, or current focus areas.</li>
+              <li>Resume-style highlights without feeling like a resume dump.</li>
+              <li>Professional goals, industries of interest, or collaboration notes.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>How to keep it credible</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Lead with clarity</strong>
+                  <p class="muted">Use plain language about what you do and what kind of work belongs here.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Show selected proof</strong>
+                  <p class="muted">Highlight only a few meaningful projects, roles, or outcomes.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <div>
+                  <strong>Keep contact easy</strong>
+                  <p class="muted">Your domain email should feel like the natural next step.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Projects</span>
+          <h2>Use projects to connect the personal and the practical.</h2>
+          <p>
+            This area can hold creative output, outdoor-focused interests, DIY builds, learning in public, or professional experiments—without the site feeling messy.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-meta">
+              <span class="tag">Featured</span>
+              <span class="tag">Identity</span>
+            </div>
+            <h3>Personal brand foundation</h3>
+            <p class="muted">
+              A project about shaping your public identity: domain setup, email structure, website presence, and a system that feels stable long-term.
+            </p>
+          </article>
+
+          <article class="project">
+            <div class="project-meta">
+              <span class="tag">Practical</span>
+              <span class="tag">Ongoing</span>
+            </div>
+            <h3>Field skills and gear projects</h3>
+            <p class="muted">
+              A space for outdoor learning, skill progression, organization, or hands-on builds that reflect how you actually spend your time.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-layout">
+        <div>
+          <div class="section-heading">
+            <span class="eyebrow">Contact</span>
+            <h2>Make the next step obvious.</h2>
+            <p>
+              The site should end with one clean action: reach out, connect, or follow your work.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Primary contact recommendation</h3>
+            <p>
+              Use your custom domain email as the main point of contact so the site feels cohesive and fully yours.
+            </p>
+            <p class="muted">Example: jaylee@reyda.co</p>
+          </div>
+        </div>
+
+        <div class="contact-links" aria-label="Contact options">
+          <a class="contact-link" href="mailto:jaylee@reyda.co">
+            <span>
+              <strong>Email</strong><br>
+              <span class="muted">jaylee@reyda.co</span>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="contact-link" href="#top">
+            <span>
+              <strong>Homepage flow</strong><br>
+              <span class="muted">About → Work → Projects → Contact</span>
+            </span>
+            <span aria-hidden="true">↑</span>
+          </a>
+          <a class="contact-link" href="#work">
+            <span>
+              <strong>Professional section</strong><br>
+              <span class="muted">A clean place for experience and goals</span>
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>reyda.co — personal and professional, in one place.</span>
+      <span>HTML concept mockup</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const root = document.documentElement;
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+      function renderIcon(currentTheme) {
+        return currentTheme === 'dark'
+          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
+          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+      }
+
+      function applyTheme(nextTheme) {
+        theme = nextTheme;
+        root.setAttribute('data-theme', nextTheme);
+        if (toggle) {
+          toggle.setAttribute('aria-label', 'Switch to ' + (nextTheme === 'dark' ? 'light' : 'dark') + ' mode');
+          toggle.innerHTML = renderIcon(nextTheme);
+        }
+      }
+
+      applyTheme(theme);
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          applyTheme(theme === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
